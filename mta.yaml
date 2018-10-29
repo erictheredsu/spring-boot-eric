@@ -1,0 +1,14 @@
+ID: SpringBootTest
+_schema-version: '2.1'
+version: 0.0.1
+
+modules:
+ - name: spring-boot-eric
+   type: java
+   path: spring-boot-eric
+   parameters:
+      memory: 1024M
+   provides:
+    - name: spring-boot-eric_api
+      properties:
+         url: ${default-url}

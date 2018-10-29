@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edmx:Edmx Version="4.0"
+	xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+	<edmx:DataServices>
+		<Schema Namespace="SAPB1"
+			xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<EnumType IsFlags="false" Name="AccountCategorySourceEnum"
+				UnderlyingType="Edm.Int32">
+				<Member Name="acsBalanceSheet" Value="0" />
+				<Member Name="acsProfitAndLoss" Value="1" />
+				<Member Name="acsTrialBalance" Value="2" />
+			</EnumType>
+			<ComplexType Name="RclRecurringTransaction">
+                <Property Name="TransactionID" Type="Edm.Int32"/>
+                <Property Name="TemplateID" Type="Edm.Int32"/>
+                <Property Name="Instance" Type="Edm.Int32"/>
+                <Property Name="PlannedDate" Type="Edm.DateTimeOffset"/>
+                <Property Name="Status" Type="SAPB1.RclRecurringTransactionStatusEnum"/>
+                <Property Name="DocType" Type="Edm.String"/>
+                <Property Name="DocEntry" Type="Edm.Int32"/>
+            </ComplexType>
+            <EntityType Name="AccountCategory">
+                <Key>
+                    <PropertyRef Name="CategoryCode"/>
+                </Key>
+                <Property Name="CategoryCode" Type="Edm.Int32"/>
+                <Property Name="CategoryName" Type="Edm.String"/>
+                <Property Name="CategorySource" Type="SAPB1.AccountCategorySourceEnum"/>
+                <NavigationProperty Name="ChartOfAccounts" Partner="AccountCategory" Type="Collection(SAPB1.ChartOfAccount)"/>
+            </EntityType>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

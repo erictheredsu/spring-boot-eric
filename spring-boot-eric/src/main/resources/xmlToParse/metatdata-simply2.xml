@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edmx:Edmx Version="4.0"
+	xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+	<edmx:DataServices>
+		<Schema Namespace="SAPB1"
+			xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityType Name="AccountCategory">
+                <Key>
+                    <PropertyRef Name="CategoryCode"/>
+                </Key>
+                <Property Name="CategoryCode" Type="Edm.Int32"/>
+                <Property Name="CategoryName" Type="Edm.String"/>
+                <Property Name="CategorySource" Type="SAPB1.AccountCategorySourceEnum"/>
+                <NavigationProperty Name="ChartOfAccounts" Partner="AccountCategory" Type="Collection(SAPB1.ChartOfAccount)"/>
+            </EntityType>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
