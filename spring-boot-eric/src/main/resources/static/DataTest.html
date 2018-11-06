@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Post Data Test</title>
+<head />
+<body>
+	<div id="TestCode">
+		<Form action="/rest.do" method="POST" id="tryitform">
+			<div>
+				<p>put your Service Layer Url Below:</p>
+				<input name="url" type="text" style="width: 500px"> <select
+					name="method">
+					<option value="POST">POST</option>
+					<option value="GET">GET</option>
+				</select>
+			</div>
+			<div>
+				<div>
+					put your Post Data :    <input type="submit" value="submit">
+				</div>
+				<textarea name="postData" style="width: 600px; height: 200px;"></textarea>
+			</div>
+		</Form>
+	</div>
+	<div id="result">
+		<h2>result:</h2>
+		<iframe frameborder="0" name="i" src="/rest.do"
+			style="width: 600px; height: 200px;"></iframe>
+	</div>
+</body>
+</html>

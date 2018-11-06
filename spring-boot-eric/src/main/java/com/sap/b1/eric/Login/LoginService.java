@@ -2,7 +2,6 @@ package com.sap.b1.eric.Login;
 
 import org.springframework.stereotype.Service;
 import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +12,6 @@ import com.sap.b1.eric.utils.RestClient;
 @Service
 public class LoginService {
 	
-	private String b1Session;
 	public static String COOKIE = "Set-Cookie";
 
 	public String doLoginServiceLayer(LoginInfo info){
@@ -27,15 +25,20 @@ public class LoginService {
 		HttpEntity<String> entity = new HttpEntity<String>(postData, null);
 		ResponseEntity<String> response = rest.exchange(url, HttpMethod.POST, entity, String.class);
 		
-//		if(response.getStatusCode() == HttpStatus.UNAUTHORIZED) {
-//			throw new Exception("Invalid username and password");
-//		}
+		if(response.getStatusCode() == HttpStatus.UNAUTHORIZED) {
+			return "Invalid username and password";
+		}
 		
 		for(String key : response.getHeaders().keySet()) {
 			if(key.equals(COOKIE)) {
-				b1Session = response.getHeaders().get(key).get(0);
+				String b1Session = response.getHeaders().get(key).get(0);
+				RestClient.setB1Session(b1Session);
 			}
 		}
-		return response.getBody();	
+		
+		String rc = response.getBody();
+		rc += "\r\n\r\n<a href=\\dataTest>go to Data Test Page</a>";
+		
+		return rc;
 	}
 }
