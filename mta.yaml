@@ -7,7 +7,8 @@ modules:
    type: java
    path: spring-boot-eric
    parameters:
-      memory: 1024M
+      memory: 256M
+      disk-quota: 256M
    provides:
     - name: spring-boot-eric_api
       properties:
