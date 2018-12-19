@@ -10,6 +10,7 @@ public class HomeBean {
     	return "Login.html"; //or return "forward:Login.html"
     }
     
+    
     @RequestMapping("/dataTest")
     String dataTest() {
     	return "DataTest.html";

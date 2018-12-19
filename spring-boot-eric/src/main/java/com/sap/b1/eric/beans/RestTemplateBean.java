@@ -19,5 +19,4 @@ public class RestTemplateBean {
 		return serv.doSLRequest(info);
 	}
 	
-
 }
