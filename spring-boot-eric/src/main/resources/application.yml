@@ -1,0 +1,9 @@
+#main
+server.port: 8081
+
+
+#dev profiles
+---
+spring:
+  profiles: dev
+server.port: 8080

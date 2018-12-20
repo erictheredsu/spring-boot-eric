@@ -66,6 +66,7 @@ public class annotationTestBean {
 		return fromAnotherBean;
 	}
 	
+	
 	@Component
 	public class InjectBean{
 		
