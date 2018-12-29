@@ -3,7 +3,8 @@ package com.sap.b1.eric.beans;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller
+
+@Controller //have to use @Controller, RestController doesn't work for forward htmls
 public class HomeBean {
     @RequestMapping("/")
     String home() {
