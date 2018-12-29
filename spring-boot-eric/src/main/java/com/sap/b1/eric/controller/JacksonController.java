@@ -1,8 +1,9 @@
-package com.sap.b1.eric.beans;
+package com.sap.b1.eric.controller;
 
 import java.text.ParseException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,19 +14,19 @@ import com.sap.b1.eric.jackson.JacksonXmlService;
 
 @RestController
 @RequestMapping("/jackson/")
-public class JacksonBean {
+public class JacksonController {
 	
 	@Autowired
 	JacksonJsonService jsonServ;
 	@Autowired
 	JacksonXmlService xmlServ;
 	
-	@RequestMapping("/metadata")
+	@GetMapping("/metadata")
 	Object loadMetadata() {
 		return xmlServ.loadMetadata();
 	}
 	
-	@RequestMapping("/json")
+	@GetMapping("/json")
 	Object loadJson() {
 		try {
 			return jsonServ.loadJson();

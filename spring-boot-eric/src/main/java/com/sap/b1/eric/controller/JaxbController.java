@@ -1,7 +1,8 @@
-package com.sap.b1.eric.beans;
+package com.sap.b1.eric.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,12 +10,12 @@ import com.sap.b1.eric.jaxb.JaxbService;
 
 @RestController
 @RequestMapping("/jaxb/")
-public class JaxbBean {
+public class JaxbController {
 	
 	@Autowired
 	private JaxbService serv;
 	
-	@RequestMapping("/metadata")
+	@GetMapping("/metadata")
 	String loadMetadata() {
 		return serv.loadMetadata();
 	}
