@@ -1,9 +1,27 @@
-#main
 server.port: 8081
 
+#DB connection info
+jdbc_hana_url: jdbc:sap://10.58.114.42:30415/?user=SYSTEM&password=manager
+jdbc_mssql_url: jdbc:sqlserver://10.58.81.194:1433;user=sa;password=TestAutomation;integratedSecurity=false
+jdbc_mysql_url: jdbc:mysql://localhost:3306/mangos
 
-#dev profiles
----
+#HANA
 spring:
-  profiles: dev
-server.port: 8080
+  datasource:
+    driver-class-name:  com.sap.db.jdbc.Driver
+    url: ${jdbc_hana_url}
+    hikari:
+      maximum-pool-size: 20
+
+
+---
+#profile sqlserver
+spring:
+  profiles: sqlserver
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: ${jdbc_mssql_url}
+    hikari:
+      maximum-pool-size: 20
+      
+server.port: 8082

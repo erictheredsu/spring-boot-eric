@@ -2,6 +2,7 @@ package com.sap.b1.eric;
 
 import java.lang.management.ManagementFactory;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -18,7 +19,7 @@ public class MainStarter {
         System.out.print("ProcessID=" +  Long.toString(Long.parseLong(jvmName.substring(0, index))));
         
         //add proxy to use fiddler
-		if(true)
+		if(false)
 		{
 			System.setProperty("http.proxySet", "true");
 			System.setProperty("http.proxyHost", "localhost");
