@@ -45,7 +45,7 @@ public class generalServiceController {
 	@Autowired
 	private ServiceLayerService slServ;
 	
-	//TODO: what is these means?
+	//TODO: what is these mean?
 	@ApiOperation(value = "adapter for ServiceLayer", notes = " can do Add, Update, delete, Get operation, not finish yet", response = String.class)
     @ApiImplicitParams({
         @ApiImplicitParam(name = "RestInfo", value = "Service Layer Request info", required = true, /*dataType = "String",*/ paramType = "body")})

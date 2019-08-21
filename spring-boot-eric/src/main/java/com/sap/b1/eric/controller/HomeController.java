@@ -3,8 +3,10 @@ package com.sap.b1.eric.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import springfox.documentation.annotations.ApiIgnore;
 
 @Controller //have to use @Controller, RestController doesn't work for forwarding htmls
+@ApiIgnore
 public class HomeController {
 	@GetMapping("/")
     String home() {

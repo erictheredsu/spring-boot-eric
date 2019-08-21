@@ -20,7 +20,7 @@ public class SwaggerConfig {
                 .groupName("api")
                 .apiInfo(metaData())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.sap.b1.eric"))
+                .apis(RequestHandlerSelectors.basePackage("com.sap.b1.eric."))
                 .paths(PathSelectors.any()) //TODO: how to control the exposing of api?
                 .build();
 	}
