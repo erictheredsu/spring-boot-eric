@@ -217,15 +217,11 @@
 				<artifactId>ngdbc</artifactId>
 				<version>1.120.15</version>
 			</dependency>
-			<dependency>
-				<groupId>org.hamcrest</groupId>
-				<artifactId>hamcrest-junit</artifactId>
-				<scope>test</scope>
-			</dependency>
 		</dependencies>
 	</dependencyManagement>
 	<modules>
 		<module>ConsoleTest</module>
 		<module>spring-boot-eric</module>
+		<module>redis-test</module>
 	</modules>
 </project>
