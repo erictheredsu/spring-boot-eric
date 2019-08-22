@@ -12,14 +12,21 @@ public class LettuceClient implements AutoCloseable  {
 	{
 		client = new RedisClient("10.58.136.142");
 		conn = client.connect();	
-		System.out.println("redis connect ok");
+		if(conn.ping().equalsIgnoreCase("Pong"))
+		{
+			System.out.println("Lettuce connect ok");
+		}
+		else
+		{
+			System.out.println("Lettuce connect fail");
+		}
 	}
 	
 	@Override
 	public void close() throws Exception {
 		conn.close();
 		client.shutdown();
-		System.out.println("redis connect close");
+		System.out.println("Lettuce connect close");
 	}
 	
 	public RedisConnection<String, String> getConn() {
