@@ -1,0 +1,23 @@
+#Rabbitmq
+spring.rabbitmq.username: dev1
+spring.rabbitmq.password: 1234
+spring.rabbitmq.virtual-host: dev
+spring.rabbitmq.addresses: 10.58.136.142:15671
+spring.rabbitmq.connection-timeout: 50000
+spring.rabbitmq.host: 10.58.136.142
+spring.rabbitmq.portNumber: 15671
+
+#Rabbitmq listetner
+spring.rabbitmq.listener.concurrency: 10
+spring.rabbitmq.listener.max-concurrency: 20
+spring.rabbitmq.listener.acknowledge-mode: MANUAL
+spring.rabbitmq.listener.prefetch: 10
+spring.rabbitmq.listener.retry.enabled: true
+#rabbitmq publisher
+spring.rabbitmq.template.retry.enabled: false
+spring.rabbitmq.publisher-confirms: false
+spring.rabbitmq.publisher-returns: false
+#rabbitmq management
+spring.rabbitmq.management.uri: http://10.58.136.142:15672
+spring.rabbitmq.management.username: admin
+spring.rabbitmq.management.password: admin
