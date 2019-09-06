@@ -15,9 +15,17 @@ import com.sap.b1.rabbitmq.constants.RabbitmqConsts;
 @Controller
 public class AmpqProducer implements Runnable {
 
-	@Autowired
-	Connection conn;
 	
+	Connection conn;
+	public Connection getConn() {
+		return conn;
+	}
+
+	@Autowired
+	public void setConn(Connection conn) {
+		this.conn = conn;
+	}
+
 	Channel chProduce = null;
 
 	private Logger logger = LoggerFactory.getLogger(AmpqProducer.class);
@@ -39,7 +47,7 @@ public class AmpqProducer implements Runnable {
 		}
 		
 	}
-	
+
 
 	public void init() throws IOException, TimeoutException
 	{
