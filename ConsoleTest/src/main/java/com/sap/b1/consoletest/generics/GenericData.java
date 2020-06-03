@@ -1,4 +1,4 @@
-package com.sap.b1.consoletest;
+package com.sap.b1.consoletest.generics;
 
 public class GenericData<T> {
 	private T key;

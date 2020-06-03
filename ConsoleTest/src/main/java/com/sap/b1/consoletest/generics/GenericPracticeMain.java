@@ -1,10 +1,10 @@
-package com.sap.b1.consoletest;
+package com.sap.b1.consoletest.generics;
 
 /**
  * Hello world!
  *
  */
-public class App 
+public class GenericPracticeMain 
 {
     public static void main( String[] args )
     {

@@ -9,12 +9,13 @@ import org.springframework.stereotype.Controller;
 public class BootStrap {
 
 	private Logger logger = LoggerFactory.getLogger(BootStrap.class);
+	@Autowired
 	AmpqProducer ampqProducer;
 
-	@Autowired
-	public void setAmpqProducer(AmpqProducer ampqProducer) {
-		this.ampqProducer = ampqProducer;
-	}
+//	@Autowired
+//	public void setAmpqProducer(AmpqProducer ampqProducer) {
+//		this.ampqProducer = ampqProducer;
+//	}
 
 	public void run()
 	{
