@@ -1,4 +1,10 @@
-server.port: 8081
+server:
+ port: 443
+ ssl:
+   key-store: classpath:server.pfx
+   key-store-password: 123456
+   key-store-type: PKCS12
+   enabled: true
 
 #DB connection info
 jdbc_hana_url: jdbc:sap://10.58.114.42:30415/?user=SYSTEM&password=manager
